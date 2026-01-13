@@ -1,0 +1,6 @@
+<Project>
+  <Target Name="Install" Condition="'$(PackAsTool)' == 'true'" DependsOnTargets="Pack">
+    <Exec Command="dotnet tool uninstall -g $(PackageId)" IgnoreExitCode="true" />
+    <Exec Command="dotnet tool install -g $(PackageId) --add-source &quot;$(PackageOutputPath)&quot; --version $(PackageVersion)" />
+  </Target>
+</Project>
