@@ -1,5 +1,21 @@
-﻿using System.Reflection;
+﻿using GSS.CLI.Commands;
+using Spectre.Console.Cli;
 
-Version version = Assembly.GetExecutingAssembly().GetName().Version!;
+var app = new CommandApp();
 
-Console.WriteLine($"GSS CLI - Version {version.Major}.{version.Minor}.{version.Build}");
+app.Configure(config =>
+{
+    config.AddCommand<CheckCommand>("check")
+        .WithDescription("Checks if required tools are installed");
+
+    config.AddCommand<NewCommand>("new")
+        .WithDescription("Scaffolds a new GSS solution from a template");
+
+    config.AddBranch("add", add =>
+    {
+        add.AddCommand<AddServiceCommand>("service")
+            .WithDescription("Adds a new service to the solution");
+    });
+});
+
+return app.Run(args);

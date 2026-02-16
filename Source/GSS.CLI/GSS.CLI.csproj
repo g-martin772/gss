@@ -11,4 +11,8 @@
       <PackageReference Include="Spectre.Console.Cli" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\GSS.Common\GSS.Common.csproj" />
+    </ItemGroup>
+
 </Project>
