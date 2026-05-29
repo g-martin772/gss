@@ -1,0 +1,19 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "dotnet build": true
+    },
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "**/gss.root.*.json"
+            ],
+            "url": "./Schemas/gss.root.schema.json"
+        },
+        {
+            "fileMatch": [
+                "**/gss.project.*.json"
+            ],
+            "url": "./Schemas/gss.project.schema.json"
+        }
+    ]
+}

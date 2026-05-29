@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://gss.local/schemas/gss.root.schema.json",
+  "title": "GSS Root Config",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "versionNumber", "projects"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The root name for the repository."
+    },
+    "versionNumber": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The root config version number."
+    },
+    "projects": {
+      "type": "array",
+      "description": "Projects associated with the root.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "type"],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Relative path to the project directory."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["library", "application", "service"],
+            "description": "The project type."
+          }
+        }
+      }
+    }
+  }
+}

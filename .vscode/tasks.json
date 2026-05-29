@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "dotnet build install",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"/t:Install"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build"
+		}
+	]
+}
