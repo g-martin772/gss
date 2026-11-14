@@ -14,8 +14,8 @@ public class CheckCommand : Command<CheckCommand.Settings>
     private static readonly ToolCheck[] Tools =
     [
         new("git", MinVersion: "2.53"),
-        new("dotnet", MinVersion: "10.0"),
-        new("dotnet-ef", MinVersion: "10.0"),
+        new("dotnet", MinVersion: "11.0"),
+        new("dotnet-ef", MinVersion: "11.0"),
         new("docker", MinVersion: "29.0"),
         new("aspire", MinVersion: "13.0"),
         new("kubectl", "version --client", "1.35"),
