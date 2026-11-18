@@ -13,17 +13,17 @@ public class CheckCommand : Command<CheckCommand.Settings>
 
     private static readonly ToolCheck[] Tools =
     [
-        new("git", MinVersion: "2.53"),
+        new("git", MinVersion: "2.56"),
         new("dotnet", MinVersion: "11.0"),
         new("dotnet-ef", MinVersion: "11.0"),
-        new("docker", MinVersion: "29.0"),
-        new("aspire", MinVersion: "13.0"),
-        new("kubectl", "version --client", "1.35"),
-        new("helm", "version", "3.19"),
-        new("node", MinVersion: "25.0"),
-        new("npm", MinVersion: "11.0"),
+        new("docker", MinVersion: "29.9"),
+        new("aspire", MinVersion: "17.0"),
+        new("kubectl", "version --client", "1.37"),
+        new("helm", "version", "4.3"),
+        new("node", MinVersion: "26.0"),
+        new("npm", MinVersion: "12.0"),
         new("python", MinVersion: "3.14"),
-        new("pip", MinVersion: "26.0")
+        new("pip", MinVersion: "26.2")
     ];
 
     public override int Execute(CommandContext context, Settings settings, CancellationToken cancellationToken)
